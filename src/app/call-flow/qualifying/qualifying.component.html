@@ -1,0 +1,34 @@
+<div>
+    
+<div class='question'>
+    <mat-radio-group>
+        Have you ever been diagnosed with ESRD?<br>
+      <mat-radio-button value="true">Yes</mat-radio-button>
+      <mat-radio-button value="flase">No</mat-radio-button>
+    </mat-radio-group>
+    
+</div>
+
+<div class='question'>
+    Are you enrolled in Medicare parts A & B?<br>
+    <mat-form-field>
+        <mat-select>
+            <mat-option value='neither'>Neither</mat-option>
+            <mat-option value='partA'>Part A</mat-option>
+            <mat-option value='partB'>Part B</mat-option>
+            <mat-option value='both'>Both</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+
+<div class='question'>
+    <h3>SEP Determination</h3>
+    <mat-radio-group>
+        <mat-radio-button labelPosition='before' value="moved">Have you recently moved?</mat-radio-button><br>
+        <mat-radio-button labelPosition='before' value="coverage">Have you recently lost coverage?</mat-radio-button><br>
+        <mat-radio-button labelPosition='before' value="help">Are you receiving any extra help?</mat-radio-button><br>
+        <mat-radio-button labelPosition='before' value="none">No SEP available.</mat-radio-button>
+    </mat-radio-group>    
+</div>
+
+</div>

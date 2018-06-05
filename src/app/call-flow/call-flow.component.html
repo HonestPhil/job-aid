@@ -1,0 +1,63 @@
+<mat-vertical-stepper>
+    <mat-step>
+        <ng-template matStepLabel>Intro</ng-template>
+        <app-intro></app-intro>
+        <div class='nextBtn'>
+            <button mat-button matStepperNext >Next</button>
+        </div>
+    </mat-step>
+    
+    <mat-step>
+        <ng-template matStepLabel>Demographics</ng-template>
+        <app-demographics></app-demographics>
+        <div class='navButtons'>
+            <div class='prevBtn'>
+                <button mat-button matStepperPrevious >Back</button>
+            </div>
+            <div class='nextBtn'>
+                <button mat-button matStepperNext >Next</button>
+            </div>            
+        </div>
+    </mat-step>
+
+    <mat-step>
+        <ng-template matStepLabel>Qualifying</ng-template>
+        <app-qualifying></app-qualifying>
+        <div class='navButtons'>
+            <div class='prevBtn'>
+                <button mat-button matStepperPrevious >Back</button>
+            </div>
+            <div class='nextBtn'>
+                <button mat-button matStepperNext >Next</button>
+            </div>            
+        </div>
+    </mat-step>
+
+    <mat-step>
+        <ng-template matStepLabel>Fact Finding</ng-template>
+        <app-fact-finding></app-fact-finding>
+        <div class='navButtons'>
+            <div class='prevBtn'>
+                <button mat-button matStepperPrevious >Back</button>
+            </div>
+            <div class='nextBtn'>
+                <button mat-button matStepperNext >Next</button>
+            </div>            
+        </div>
+    </mat-step>
+
+    <mat-step>
+        <ng-template matStepLabel>Presentation</ng-template>
+        <app-presentation></app-presentation>
+        <div class='navButtons'>
+            <div class='prevBtn'>
+                <button mat-button matStepperPrevious >Back</button>
+            </div>
+            <div class='nextBtn'>
+                <button mat-button matStepperNext >Next</button>
+            </div>            
+        </div>
+    </mat-step>
+
+</mat-vertical-stepper>
+

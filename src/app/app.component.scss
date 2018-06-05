@@ -1,0 +1,16 @@
+.row {
+    position: relative;
+}
+
+.column-left {
+    width: 65%;
+}
+
+.column-right {
+    position: absolute;
+    width: 20%;
+    right: 1rem;
+    top: 3rem;
+    
+}
+
