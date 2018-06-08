@@ -20,6 +20,7 @@ import { OutcomeComponent } from './outcome/outcome.component';
 import { AddClientComponent } from './add-client/add-client.component';
 import { EditClientComponent } from './edit-client/edit-client.component';
 
+import { ClientService } from './assets/services/client.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import { EditClientComponent } from './edit-client/edit-client.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ClientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
