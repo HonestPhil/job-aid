@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { ClientService } from '../assets/services/client.service';
 
 import { ClientInfo } from '../assets/classes/clients/client-info';
 
@@ -8,7 +10,8 @@ import { ClientInfo } from '../assets/classes/clients/client-info';
   styleUrls: ['./notes.component.scss']
 })
 export class NotesComponent implements OnInit {
-  clients: ClientInfo[];
+  
+  @Input() client: ClientInfo;
   
   constructor() { }
 
