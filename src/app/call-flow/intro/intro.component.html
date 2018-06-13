@@ -1,10 +1,10 @@
 <div>
-    <mat-radio-group >
+    <mat-radio-group [(ngModel)]='client.qualified.inbound' >
         Is this an inbound call? <br>
         <mat-radio-button value='true'>
             Yes
         </mat-radio-button>
-        <mat-radio-button vlaue='false'>
+        <mat-radio-button value='false'>
             No
         </mat-radio-button>
     </mat-radio-group>

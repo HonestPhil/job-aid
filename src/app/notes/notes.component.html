@@ -1,2 +1,68 @@
-<h1>Notes:</h1>
-<p>First Name: {{client.demographics.firstName}}</p>
+<div class='notes-buttons'>
+    <button mat-button><i class='material-icons btn-done'>check_circle</i></button>
+    <button mat-button (click)='copy()'><i class='material-icons btn-copy'>file_copy</i></button>
+</div>
+
+<mat-divider></mat-divider>
+
+<div id='call-info'>
+    <h1>Call Info:</h1>
+
+    <mat-accordion *ngIf='client.demographics.firstName' >
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Name: 
+          </mat-panel-title>
+          <mat-panel-description>
+           {{ client.demographics.firstName }} {{ client.demographics.lastName }}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        
+        <div>
+            <p>Inbound: {{ client.qualified.inbound | truthy}}</p>
+        </div>
+        
+        <div *ngIf='client.demographics.address.street' >
+            <span class='label'>Address: </span>
+            <span class='value'>{{ client.demographics.address.street }} </span>
+            <br>
+            <span class='label'>City: </span>
+            <span class='value'>{{ client.demographics.address.city }}</span>
+            <br>
+            <span class='label'>State: </span>
+            <span class='value'>{{ client.demographics.address.state }}</span>
+            <br>
+            <span class='label'>Zip: </span>
+            <span class='value'>{{ client.demographics.address.zip }}</span>
+        </div>
+    
+        <div *ngIf='client.demographics.phone'>
+            <span class='label'>Phone: </span>
+            <span class='value'>
+                {{ client.demographics.phone }}
+            </span>
+        </div>
+        
+        <div *ngIf='client.demographics.birthday' >
+            <span class='label'>Birthday: </span>
+            <span class='value'>
+                {{ client.demographics.birthday | date:'mediumDate' }}
+            </span>
+        </div>
+    
+      </mat-expansion-panel>
+    </mat-accordion>
+    
+    <div>
+        <h4>Notes:</h4>
+        <textarea 
+            [(ngModel)]='client.outcome.notes' 
+            placeholder="Type Notes Here">
+        </textarea>
+    </div>
+
+</div>
+
+
+

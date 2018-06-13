@@ -10,11 +10,18 @@ import { ClientInfo } from '../assets/classes/clients/client-info';
 })
 export class CallFlowComponent implements OnInit {
   
- @Input() client: ClientInfo;
 
- constructor( ) { }
+  client: ClientInfo;
+
+ constructor(public clientService: ClientService ) { }
 
   ngOnInit() {
+    this.getClient();
+  }
+  
+  getClient(): void {
+    this.clientService.getClient()
+    .subscribe(client => this.client = client);
   }
   
 }

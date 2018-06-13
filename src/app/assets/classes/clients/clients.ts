@@ -2,17 +2,19 @@ import { ClientInfo } from './client-info';
 
 export const Clients: ClientInfo = {
     demographics:{
-        firstName: '',
-        lastName: '',
+        firstName: 'John',
+        lastName: 'Doe',
         address: {
-            street : '',
-            city : '',
-            state : '',
-            zip : '',
+            street : '123 Main st',
+            city : 'Charlotte',
+            state : 'NJ',
+            zip : '28213',
         },
-        birthday : ''
+        phone: '(704)555-7913',
+        birthday : '12/08/1983'
     },
     qualified:{
+        inbound: false,
         esrd: false,
         medicareParts : false,
         sep: false
@@ -23,6 +25,7 @@ export const Clients: ClientInfo = {
             type: '',
             name : '',
             effective : ''
-        }
+        },
+        notes: ''
     }
 };

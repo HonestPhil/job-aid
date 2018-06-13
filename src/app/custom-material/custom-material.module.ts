@@ -16,6 +16,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatListModule } from '@angular/material/list';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   imports: [
@@ -34,7 +36,9 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatSelectModule,
     MatCheckboxModule,
     MatDividerModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatListModule,
+    MatDialogModule
   ],
   exports: [
     CommonModule,
@@ -52,7 +56,9 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatSelectModule,
     MatCheckboxModule,
     MatDividerModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatListModule,
+    MatDialogModule
   ],
   declarations: []
 })

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { ClientInfo } from '../../assets/classes/clients/client-info';
 
 @Component({
   selector: 'app-intro',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./intro.component.scss']
 })
 export class IntroComponent implements OnInit {
+
+  @Input() client: ClientInfo;
 
   constructor() { }
 

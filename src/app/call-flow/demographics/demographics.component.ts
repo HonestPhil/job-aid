@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CustomMaterialModule } from '../../custom-material/custom-material.module';
+
+import { ClientInfo } from '../../assets/classes/clients/client-info';
+import { ClientService } from '../../assets/services/client.service';
 
 @Component({
   selector: 'app-demographics',
@@ -8,10 +11,10 @@ import { CustomMaterialModule } from '../../custom-material/custom-material.modu
 })
 export class DemographicsComponent implements OnInit {
 
-  
+  @Input() client: ClientInfo;
+
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

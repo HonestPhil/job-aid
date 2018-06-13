@@ -7,10 +7,12 @@ export class ClientDemographics {
         state: string;
         zip: string;
     };
+    phone: string;
     birthday: string;
 }
 
 export class ClientQualifying {
+    inbound: boolean;
     esrd: boolean;
     medicareParts: boolean;
     sep: boolean;
@@ -22,7 +24,8 @@ export class ClientOutcome {
         type: string;
         name: string;
         effective: string;
-    }
+    };
+    notes: string;
     
 }
 

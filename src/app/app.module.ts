@@ -21,6 +21,8 @@ import { AddClientComponent } from './add-client/add-client.component';
 import { EditClientComponent } from './edit-client/edit-client.component';
 
 import { ClientService } from './assets/services/client.service';
+import { ClientDisplayComponent } from './client-display/client-display.component';
+import { TruthyPipe } from './truthy.pipe';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { ClientService } from './assets/services/client.service';
     PresentationComponent,
     OutcomeComponent,
     AddClientComponent,
-    EditClientComponent
+    EditClientComponent,
+    ClientDisplayComponent,
+    TruthyPipe
   ],
   imports: [
     BrowserModule,
