@@ -8,12 +8,14 @@ import { Clients } from '../classes/clients/clients';
 
 @Injectable()
 export class ClientService {
-    client: ClientInfo = Clients;
-    
+  client: ClientInfo = Clients;
+
   constructor() { }
   
   getClient(): Observable<ClientInfo> {
       return of (this.client);
   }
+  
+
 
 }

@@ -1,5 +1,5 @@
 <div class='notes-buttons'>
-    <button mat-button><i class='material-icons btn-done'>check_circle</i></button>
+    <button mat-button (click)="openDialog()"><i class='material-icons btn-done'>check_circle</i></button>
     <button mat-button (click)='copy()'><i class='material-icons btn-copy'>file_copy</i></button>
 </div>
 
@@ -19,7 +19,7 @@
           </mat-panel-description>
         </mat-expansion-panel-header>
         
-        <div>
+        <div [style.color]="!client.qualified.inbound ? 'red': 'black'">
             <p>Inbound: {{ client.qualified.inbound | truthy}}</p>
         </div>
         
@@ -50,7 +50,28 @@
                 {{ client.demographics.birthday | date:'mediumDate' }}
             </span>
         </div>
-    
+      
+        <div>
+            <span class='label'>Enrolled in Parts A & B? : </span>
+            <span class='value'>
+                {{ client.qualified.medicareParts }}
+            </span>
+        </div>
+        
+        <div >
+            <span class='label'>Enrolled: </span>
+            <span class='value'>
+                {{ client.outcome.enrolled | truthy }}
+            </span>
+        </div>
+
+        <div *ngIf='client.outcome.enrolled' >
+            <span class='label'>Plan Type: </span>
+            <span class='value'>
+                {{ client.outcome.plan.type | planType }}
+            </span>
+        </div>
+
       </mat-expansion-panel>
     </mat-accordion>
     

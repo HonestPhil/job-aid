@@ -5,7 +5,7 @@
 </div>
 
 <mat-accordion>
-    <mat-expansion-panel *ngFor='let plan of plans'>
+    <mat-expansion-panel *ngFor='let plan of plans' [disabled]='!plan.eligible'>
         <mat-expansion-panel-header>
             <mat-panel-title>
                 {{plan.planType}}

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { ClientInfo } from '../../assets/classes/clients/client-info';
+import { ClientService } from '../../assets/services/client.service';
 
 @Component({
   selector: 'app-intro',
@@ -11,9 +12,11 @@ export class IntroComponent implements OnInit {
 
   @Input() client: ClientInfo;
 
-  constructor() { }
+ constructor( ) { }
 
   ngOnInit() {
   }
+  
+
 
 }

@@ -1,3 +1,50 @@
-<p>
-  outcome works!
-</p>
+<h1 mat-dialog-title>What is the outcome of this phone call?</h1>
+<div mat-dialog-content>
+    
+    <div>
+        <mat-form-field>
+            
+            <mat-select [(ngModel)]='client.outcome.enrolled' placeholder='Outcome'>
+                <mat-option [value]='true'>Enrolled</mat-option>
+                <mat-option [value]='false'>Callback Scheduled</mat-option>
+                <mat-option [value]='false'>Not Interested</mat-option>
+            </mat-select>
+        </mat-form-field>        
+    </div>
+
+    <div *ngIf='client.outcome.enrolled'>
+        <mat-form-field >
+          <mat-select  [(ngModel)]='client.outcome.plan.type' placeholder='Select A Plan Type'>
+            <mat-option value='gap'>Medigap</mat-option>
+            <mat-option value='gapPDP'>Medigap and PDP</mat-option>
+            <mat-option value='advantage'>Medicare Advantage</mat-option>
+            <mat-option value='snp'>Special Needs Plan</mat-option>
+            <mat-option value='pdp'>Prescription Drug Plan</mat-option>
+          </mat-select> 
+        </mat-form-field>        
+    </div>
+
+
+    
+    <div [ngSwitch]='client.outcome.plan.type'>
+    <!--    <div *ngSwitchCase='gap'>-->
+        <!--     -->    
+    <!--    </div>-->
+    <!--    <div *ngSwitchCase='gapPDP'>-->
+            
+    <!--    </div>-->
+    <!--    <div *ngSwitchCase='advantage'>-->
+            
+    <!--    </div>-->
+    <!--    <div *ngSwitchCase='snp'>-->
+            
+    <!--    </div>-->
+    <!--    <div *ngSwitchCase='pdp'>-->
+            
+    <!--    </div>-->
+
+    </div> 
+
+<button mat-button class='close-btn' (click)='onClose()'>Close</button>
+
+</div>

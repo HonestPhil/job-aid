@@ -14,7 +14,7 @@ export class ClientDemographics {
 export class ClientQualifying {
     inbound: boolean;
     esrd: boolean;
-    medicareParts: boolean;
+    medicareParts: string;
     sep: boolean;
 }
 

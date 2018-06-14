@@ -3,9 +3,9 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http";
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material';
 
 import { CustomMaterialModule } from './custom-material/custom-material.module';
-
 
 import { AppComponent } from './app.component';
 import { CallFlowComponent } from './call-flow/call-flow.component';
@@ -22,7 +22,9 @@ import { EditClientComponent } from './edit-client/edit-client.component';
 
 import { ClientService } from './assets/services/client.service';
 import { ClientDisplayComponent } from './client-display/client-display.component';
-import { TruthyPipe } from './truthy.pipe';
+import { TruthyPipe } from './assets/pipes/truthy.pipe';
+import { PlanTypePipe } from './assets/pipes/plan-type.pipe';
+
 
 @NgModule({
   declarations: [
@@ -39,13 +41,18 @@ import { TruthyPipe } from './truthy.pipe';
     AddClientComponent,
     EditClientComponent,
     ClientDisplayComponent,
-    TruthyPipe
+    TruthyPipe,
+    PlanTypePipe
   ],
   imports: [
     BrowserModule,
     CustomMaterialModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
+  ],
+  entryComponents: [
+    OutcomeComponent  
   ],
   providers: [ClientService],
   bootstrap: [AppComponent]

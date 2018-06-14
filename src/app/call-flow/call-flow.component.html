@@ -1,11 +1,12 @@
+
 <mat-vertical-stepper>
-    <!--<mat-step>-->
-    <!--    <ng-template matStepLabel>Intro</ng-template>-->
-    <!--    <app-intro [client]='client'></app-intro>-->
-    <!--    <div class='nextBtn'>-->
-    <!--        <button mat-button matStepperNext >Next</button>-->
-    <!--    </div>-->
-    <!--</mat-step>-->
+    <mat-step>
+        <ng-template matStepLabel>Intro</ng-template>
+        <app-intro [client]='client'></app-intro>
+        <div class='nextBtn'>
+            <button mat-button matStepperNext >Next</button>
+        </div>
+    </mat-step>
     
     <mat-step>
         <ng-template matStepLabel>Demographics</ng-template>
@@ -22,7 +23,7 @@
 
     <mat-step>
         <ng-template matStepLabel>Qualifying</ng-template>
-        <app-qualifying></app-qualifying>
+        <app-qualifying [client]='client'></app-qualifying>
         <div class='navButtons'>
             <div class='prevBtn'>
                 <button mat-button matStepperPrevious >Back</button>
@@ -48,7 +49,7 @@
 
     <mat-step>
         <ng-template matStepLabel>Presentation</ng-template>
-        <app-presentation ></app-presentation>
+        <app-presentation [client]='client'></app-presentation>
         <div class='navButtons'>
             <div class='prevBtn'>
                 <button mat-button matStepperPrevious >Back</button>

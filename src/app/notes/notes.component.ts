@@ -1,8 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 import { ClientService } from '../assets/services/client.service';
 
 import { ClientInfo } from '../assets/classes/clients/client-info';
+import {OutcomeComponent } from '../outcome/outcome.component';
 
 @Component({
   selector: 'app-notes',
@@ -13,7 +15,10 @@ export class NotesComponent implements OnInit {
   
   client: ClientInfo;
 
- constructor(public clientService: ClientService ) { }
+ constructor(
+   public clientService: ClientService,
+   public dialog: MatDialog
+   ) { }
 
   ngOnInit() {
     this.getClient();
@@ -49,5 +54,14 @@ export class NotesComponent implements OnInit {
     alert('Notes Copied to Clipboard');
 
   }
+  
+  openDialog(): void {
+    let dialogRef = this.dialog.open(OutcomeComponent, {
+      width: '50%',
+      data: { client: this.client },
+    });
+  }
+  
+  
 
 }

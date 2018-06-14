@@ -12,7 +12,7 @@
 <div class='question'>
     Are you enrolled in Medicare parts A & B?<br>
     <mat-form-field>
-        <mat-select>
+        <mat-select [(ngModel)]='client.qualified.medicareParts'>
             <mat-option value='neither'>Neither</mat-option>
             <mat-option value='partA'>Part A</mat-option>
             <mat-option value='partB'>Part B</mat-option>

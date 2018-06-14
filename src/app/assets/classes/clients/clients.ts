@@ -16,11 +16,11 @@ export const Clients: ClientInfo = {
     qualified:{
         inbound: false,
         esrd: false,
-        medicareParts : false,
+        medicareParts : '',
         sep: false
     },
     outcome:{
-        enrolled : false,
+        enrolled : null,
         plan: { 
             type: '',
             name : '',
