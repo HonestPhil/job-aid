@@ -1,11 +1,9 @@
 import { Plan } from './plans/plan';
 
-import { MedigapPlans, MedigapCompliance } from './plans/medigap';
+import { MedigapPlans, MedigapCompliance, MedigapLogic } from './plans/medigap';
 import { AdvantagePlans, AdvantageCompliance } from './plans/advantage';
 
-
-
-export const Products: Plan[] = [
+export let Products: Plan[] = [
 
         
         { planType: 'Medigap', planNames: MedigapPlans, compliance: MedigapCompliance, eligible: false},

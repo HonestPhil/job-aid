@@ -21,6 +21,9 @@ import { AddClientComponent } from './add-client/add-client.component';
 import { EditClientComponent } from './edit-client/edit-client.component';
 
 import { ClientService } from './assets/services/client.service';
+import { LogicService } from './assets/services/logic.service';
+import { PlanService } from './assets/services/plan.service';
+
 import { ClientDisplayComponent } from './client-display/client-display.component';
 import { TruthyPipe } from './assets/pipes/truthy.pipe';
 import { PlanTypePipe } from './assets/pipes/plan-type.pipe';
@@ -54,7 +57,10 @@ import { PlanTypePipe } from './assets/pipes/plan-type.pipe';
   entryComponents: [
     OutcomeComponent  
   ],
-  providers: [ClientService],
+  providers: [
+    ClientService, 
+    LogicService,
+    PlanService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

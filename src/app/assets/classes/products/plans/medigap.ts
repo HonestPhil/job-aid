@@ -17,3 +17,9 @@ export const MedigapCompliance: string[] = [
         'Premium',
         'Effective Date',
     ];
+    
+export class MedigapLogic {
+        logic(): boolean {
+                return true;
+        }
+}

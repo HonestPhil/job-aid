@@ -1,10 +1,16 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
-import { ClientService } from '../assets/services/client.service';
+import { OutcomeComponent } from '../outcome/outcome.component';
 
 import { ClientInfo } from '../assets/classes/clients/client-info';
-import {OutcomeComponent } from '../outcome/outcome.component';
+import { Clients } from '../assets/classes/clients/clients';
+import { Plan } from '../assets/classes/products/plans/plan';
+import { Products } from '../assets/classes/products/products';
+
+import { ClientService } from '../assets/services/client.service';
+import { PlanService } from '../assets/services/plan.service';
+import { LogicService } from '../assets/services/logic.service';
 
 @Component({
   selector: 'app-notes',
@@ -13,20 +19,36 @@ import {OutcomeComponent } from '../outcome/outcome.component';
 })
 export class NotesComponent implements OnInit {
   
-  client: ClientInfo;
+  client: ClientInfo = Clients;
+  plans: Plan[] = Products;
 
  constructor(
    public clientService: ClientService,
-   public dialog: MatDialog
+   public dialog: MatDialog,
+   public logicService: LogicService,
+   public planService: PlanService
    ) { }
 
   ngOnInit() {
-    this.getClient();
+    // this.getClient();
+    // this.checkLogic();
+    this.getPlans();
   }
+  
+
   
   getClient(): void {
     this.clientService.getClient()
     .subscribe(client => this.client = client);
+  }
+  
+  getPlans(): void {
+    this.planService.getPlans()
+    .subscribe(plans => this.plans = plans);    
+  }
+  
+  checkLogic(): void {
+    this.logicService.getLogic();
   }
   
   copy(): void {

@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs';
-import { of } from 'rxjs/observable/of'
+import { of } from 'rxjs/observable/of';
 
 import {ClientInfo } from '../classes/clients/client-info';
 import { Clients } from '../classes/clients/clients';
+
+import { LogicService } from './logic.service';
 
 @Injectable()
 export class ClientService {
