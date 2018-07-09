@@ -1,3 +1,5 @@
+
+
 export class ClientDemographics {
     firstName: string;
     lastName: string;
@@ -6,24 +8,32 @@ export class ClientDemographics {
         city: string;
         state: string;
         zip: string;
-    };
+    }; 
     phone: string;
     birthday: string;
-}
+} 
 
 export class ClientQualifying {
     inbound: boolean;
     esrd: boolean;
-    medicareParts: string;
+    medicareParts: {
+        parts: string;
+        partA: string;
+        partB: string;
+    };
     sep: boolean;
+    extraHelp: boolean;
 }
 
 export class ClientOutcome {
-    enrolled: boolean;
-    plan: { 
-        type: string;
+    outcome: string;
+    plan: {
+        planType: string;
+        supType: string;
         name: string;
+        pdpName: string;
         effective: string;
+        pdpEffective: string;
     };
     notes: string;
     

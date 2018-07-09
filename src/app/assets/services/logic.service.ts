@@ -39,7 +39,7 @@ export class LogicService {
   
     gap(): boolean {
         this.client = Clients;
-        if (this.client.qualified.medicareParts === 'both'){
+        if (this.client.qualified.medicareParts.parts === 'both'){
             this.eligible = true;
         } else {
             this.eligible = false;

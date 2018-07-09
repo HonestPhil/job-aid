@@ -3,4 +3,5 @@ export class Plan {
     planNames: any[];
     compliance: any[];
     eligible: any;
+    
 }

@@ -27,6 +27,8 @@ import { PlanService } from './assets/services/plan.service';
 import { ClientDisplayComponent } from './client-display/client-display.component';
 import { TruthyPipe } from './assets/pipes/truthy.pipe';
 import { PlanTypePipe } from './assets/pipes/plan-type.pipe';
+import { PartsPipe } from './assets/pipes/parts.pipe';
+import { OutcomePipe } from './assets/pipes/outcome.pipe';
 
 
 @NgModule({
@@ -45,7 +47,9 @@ import { PlanTypePipe } from './assets/pipes/plan-type.pipe';
     EditClientComponent,
     ClientDisplayComponent,
     TruthyPipe,
-    PlanTypePipe
+    PlanTypePipe,
+    PartsPipe,
+    OutcomePipe
   ],
   imports: [
     BrowserModule,
@@ -55,7 +59,8 @@ import { PlanTypePipe } from './assets/pipes/plan-type.pipe';
     MatDialogModule
   ],
   entryComponents: [
-    OutcomeComponent  
+    OutcomeComponent,
+    QualifyingComponent
   ],
   providers: [
     ClientService, 

@@ -11,9 +11,8 @@ export const AdvantageCompliance: string[] = [
         'Doctors and Specialist copay',
         'Hospital copays',
         'ER/Urgent Care copays',
-        'Prescription Drug copay',
+        'Prescription Drug copays',
         'Deductible',
-        'Star rating',
         'Premium',
         'Effective Date and SEP'
     ];

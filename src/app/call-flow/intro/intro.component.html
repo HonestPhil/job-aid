@@ -1,6 +1,6 @@
 <div>
     <mat-radio-group [(ngModel)]='client.qualified.inbound' >
-        Is this an inbound call? <br>
+        <h3 class='question-text'>Is this an inbound call?</h3> 
         <mat-radio-button [value]='true'>
             Yes
         </mat-radio-button>
@@ -10,14 +10,14 @@
     </mat-radio-group>
 </div>
 <div>
-   <p>
+   <p class='question-text'>
      Thank you for calling Horizon Blue Cross Blue Shield of New Jersey. My name
      is [your name]. How can I help you? <br>
      <mat-hint class='hint'>Hint: Remember to actively listen and take notes in the notes section.</mat-hint>
    </p> 
 </div>
 <div>
-    <p>
+    <p class='question-text'>
         Great. I would be happy to help you out. In order to assist you I will need to ask you some demographic information to pull up your records. Are you ready?
     </p>
 </div>

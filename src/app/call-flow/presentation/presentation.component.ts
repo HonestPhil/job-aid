@@ -18,11 +18,14 @@ import { LogicService } from '../../assets/services/logic.service';
   templateUrl: './presentation.component.html',
   styleUrls: ['./presentation.component.scss']
 })
-export class PresentationComponent implements OnInit, OnChanges {
+export class PresentationComponent implements OnInit {
   @Input() client: ClientInfo = Clients;
   @Input() plans: Plan[];
   
-  parts: string = this.client.qualified.medicareParts;
+  
+  
+  
+  parts: string = this.client.qualified.medicareParts.parts;
   
   
   constructor(
@@ -32,14 +35,9 @@ export class PresentationComponent implements OnInit, OnChanges {
   ngOnInit() {
   }
   
-  ngOnChanges(changes: SimpleChanges){
-    let change = changes[this.client.qualified.medicareParts];
-    let cur = change.currentValue;
-    let prev = change.previousValue;
-    if(change.isFirstChange()){
-      alert('first change');
-    }    
-  }
+
+  
+  
 
   
   checkLogic(){

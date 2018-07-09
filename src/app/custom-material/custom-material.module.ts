@@ -11,13 +11,15 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-import { MatDatepickerModule } from '@angular/material';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatListModule } from '@angular/material/list';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   imports: [
@@ -38,7 +40,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatDividerModule,
     MatExpansionModule,
     MatListModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTooltipModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     CommonModule,
@@ -58,7 +62,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatDividerModule,
     MatExpansionModule,
     MatListModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTooltipModule,
+    MatProgressSpinnerModule
   ],
   declarations: []
 })

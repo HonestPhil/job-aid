@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 
+import { FormControl } from '@angular/forms';
+
 import { CustomMaterialModule } from '../../custom-material/custom-material.module';
 
 import { Products } from '../../assets/classes/products/products';
@@ -17,6 +19,9 @@ import { Clients } from '../../assets/classes/clients/clients';
 export class QualifyingComponent implements OnInit {
 
   @Input() client: ClientInfo = Clients;
+  date = new FormControl(new Date());
+  startAt: Date = new Date(1987, 0, 1);
+  startView: string = 'month';
   
 
   constructor() { }

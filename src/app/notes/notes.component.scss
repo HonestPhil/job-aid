@@ -1,9 +1,15 @@
+@import "~variables.scss";
+
 div {
     width: 100%;
 }
 
 .value {
     color: grey;
+}
+
+.call-info {
+    overflow: scroll;
 }
 
 textarea {
@@ -23,4 +29,15 @@ button{
 
 .btn-copy {
     margin-right: 0;
+}
+
+
+
+.section-title {
+    color: $mainBlue;
+    display: inline-block;
+}
+
+.section-header {
+    width: 100%;
 }
