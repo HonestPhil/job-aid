@@ -14,7 +14,7 @@
     
 
     <mat-accordion *ngIf='client.demographics.firstName' >
-      <mat-expansion-panel >
+      <mat-expansion-panel [(expanded)]='expanded'>
         <mat-expansion-panel-header>
           <mat-panel-title>
             Name: 
@@ -53,6 +53,12 @@
             <span class='label'>Birthday: </span>
             <span class='value'>
                 {{ client.demographics.birthday | date:'mediumDate' }}
+            </span>
+        </div>
+        <div *ngIf='client.qualified.medicareId' >
+            <span class='label'>Medicare Id #: </span>
+            <span class='value'>
+                {{ client.qualified.medicareId }}
             </span>
         </div>
       
@@ -105,17 +111,83 @@
                     {{ client.outcome.plan.type | planType }}
                 </span>                
             </div>
-            <div *ngIf="client.outcome.plan.type !== 'gapPDP'">
+            <div *ngIf="client.outcome.plan.type === 'gap'">
                 <div>
                     <span class='label'>Plan Name: </span>
                     <span class='value'>
-                        {{ client.outcome.plan.name}}
+                        {{ client.outcome.plan.planName}}
                     </span>
                 </div>
                 <div>
                     <span class='label'>Effective Date: </span>
                     <span class='value'>
-                        {{ client.outcome.plan.effective | date }}
+                        {{ client.outcome.plan.planEffective | date }}
+                    </span>
+                </div>                
+                <div>
+                    <span class='label'>Confirmation Number: </span>
+                    <span class='value'>
+                        {{ client.outcome.plan.planConfirm  }}
+                    </span>
+                </div>                
+            </div>
+            <div *ngIf="client.outcome.plan.type === 'snp'">
+                <div>
+                    <span class='label'>Plan Name: </span>
+                    <span class='value'>
+                        {{ client.outcome.plan.planName}}
+                    </span>
+                </div>
+                <div>
+                    <span class='label'>Effective Date: </span>
+                    <span class='value'>
+                        {{ client.outcome.plan.planEffective | date }}
+                    </span>
+                </div>                
+                <div>
+                    <span class='label'>Confirmation Number: </span>
+                    <span class='value'>
+                        {{ client.outcome.plan.planConfirm  }}
+                    </span>
+                </div>                
+            </div>
+            <div *ngIf="client.outcome.plan.type === 'pdp'">
+                <div>
+                    <span class='label'>Plan Name: </span>
+                    <span class='value'>
+                        {{ client.outcome.plan.pdpName}}
+                    </span>
+                </div>
+                <div>
+                    <span class='label'>Effective Date: </span>
+                    <span class='value'>
+                        {{ client.outcome.plan.pdpEffective | date }}
+                    </span>
+                </div>                
+                <div>
+                    <span class='label'>Confirmation Number: </span>
+                    <span class='value'>
+                        {{ client.outcome.plan.pdpConfirm  }}
+                    </span>
+                </div>                
+            </div>
+            <div *ngIf="client.outcome.plan.type === 'advantage'">
+                <div>
+                    <span class='label'>Plan Name: </span>
+                    <span class='value'>
+                        {{ client.outcome.plan.planName}}
+                    </span>
+                </div>
+                <div>
+                    <span class='label'>Effective Date: </span>
+                    <span class='value'>
+                        {{ client.outcome.plan.planEffective | date }}
+                    </span>
+                </div>                
+                <div>
+                    <span class='label'>Confirmation Number: </span>
+                    <span class='value'>
+                        {{ client.outcome.plan.planConfirm  }}
                     </span>
                 </div>                
             </div>
@@ -123,13 +195,19 @@
                 <div>
                     <span class='label'>Medigap Name: </span>
                     <span class='value'>
-                        {{ client.outcome.plan.name}}
+                        {{ client.outcome.plan.planName}}
                     </span>
                 </div>
                 <div>
                     <span class='label'>Effective Date: </span>
                     <span class='value'>
-                        {{ client.outcome.plan.effective | date }}
+                        {{ client.outcome.plan.planEffective | date }}
+                    </span>
+                </div>                
+                <div>
+                    <span class='label'>Conrifmation Number: </span>
+                    <span class='value'>
+                        {{ client.outcome.plan.planConfirm }}
                     </span>
                 </div>                
                 <div>
@@ -142,6 +220,12 @@
                     <span class='label'>PDP Effective Date: </span>
                     <span class='value'>
                         {{ client.outcome.plan.pdpEffective | date }}
+                    </span>
+                </div>                
+                <div>
+                    <span class='label'>PDP Confirmation: </span>
+                    <span class='value'>
+                        {{ client.outcome.plan.pdpConfirm }}
                     </span>
                 </div>                
             </div>
@@ -149,13 +233,19 @@
                 <div>
                     <span class='label'>Advantage Plan Name: </span>
                     <span class='value'>
-                        {{ client.outcome.plan.name}}
+                        {{ client.outcome.plan.planName}}
                     </span>
                 </div>
                 <div>
                     <span class='label'>Effective Date: </span>
                     <span class='value'>
-                        {{ client.outcome.plan.effective | date }}
+                        {{ client.outcome.plan.planEffective | date }}
+                    </span>
+                </div>                
+                <div>
+                    <span class='label'>Confirmation Number: </span>
+                    <span class='value'>
+                        {{ client.outcome.plan.planConfirm }}
                     </span>
                 </div>                
                 <div>
@@ -168,6 +258,12 @@
                     <span class='label'>PDP Effective Date: </span>
                     <span class='value'>
                         {{ client.outcome.plan.pdpEffective | date }}
+                    </span>
+                </div>                
+                <div>
+                    <span class='label'>PDP Confirmation: </span>
+                    <span class='value'>
+                        {{ client.outcome.plan.pdpConfirm }}
                     </span>
                 </div>                
             </div>

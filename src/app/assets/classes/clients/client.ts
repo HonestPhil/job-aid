@@ -23,6 +23,7 @@ export class ClientQualifying {
     };
     sep: boolean;
     extraHelp: boolean;
+    medicareId: string;
 }
 
 export class ClientOutcome {
@@ -30,10 +31,13 @@ export class ClientOutcome {
     plan: {
         planType: string;
         supType: string;
-        name: string;
+        planName: string;
         pdpName: string;
-        effective: string;
+        planEffective: string;
         pdpEffective: string;
+        planConfirm: string;
+        pdpConfirm: string;
+        
     };
     notes: string;
     

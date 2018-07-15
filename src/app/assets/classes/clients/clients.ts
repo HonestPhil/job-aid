@@ -3,8 +3,8 @@ import { ClientInfo } from './client-info';
 
 export const Clients: ClientInfo = {
     demographics:{
-        firstName: 'John',
-        lastName: 'Doe',
+        firstName: '',
+        lastName: '',
         address: {
             street : '',
             city : '',
@@ -23,17 +23,20 @@ export const Clients: ClientInfo = {
             partB: ''
         },
         sep: false,
-        extraHelp: false
+        extraHelp: false,
+        medicareId: ''
     },
     outcome:{
         outcome : '',
         plan: {
             planType: '',
             supType: '',
-            name: '',
+            planName: '',
             pdpName: '',
-            effective: '',
-            pdpEffective: ''
+            planEffective: '',
+            pdpEffective: '',
+            planConfirm: '',
+            pdpConfirm: ''
         },
         notes: ''
     }

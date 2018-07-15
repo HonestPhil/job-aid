@@ -34,7 +34,6 @@ export class NotesComponent implements OnInit {
     // this.getClient();
     // this.checkLogic();
     this.getPlans();
-    this.expandPanel();
   }
   
 
@@ -54,34 +53,45 @@ export class NotesComponent implements OnInit {
   }
   
   copy(): void {
-    if(this.client.outcome.outcome){
-      let contentHolder =  document.getElementById('call-info');
       
-      // We will need a range object and a selection.
-      let range = document.createRange(),
-          selection = window.getSelection();
-  
-      // Clear selection from any previous data.
-      selection.removeAllRanges();
-  
-      // Make the range select the entire content of the contentHolder paragraph.
-      range.selectNodeContents(contentHolder);
-  
-      // Add that range to the selection.
-      selection.addRange(range);
-  
-      // Copy the selection to clipboard.
-      document.execCommand('copy');
-  
-      // Clear selection if you want to.
-      selection.removeAllRanges();
+    if(this.client.outcome.outcome ){
+      if(this.expanded){
+    
+        let contentHolder =  document.getElementById('call-info');
+        
+        // We will need a range object and a selection.
+        let range = document.createRange(),
+            selection = window.getSelection();
+    
+        // Clear selection from any previous data.
+        selection.removeAllRanges();
+    
+        // Make the range select the entire content of the contentHolder paragraph.
+        range.selectNodeContents(contentHolder);
+    
+        // Add that range to the selection.
+        selection.addRange(range);
+    
+        // Copy the selection to clipboard.
+        document.execCommand('copy');
+    
+        // Clear selection if you want to.
+        selection.removeAllRanges();
+        alert("Notes Copied to Clipboard " );
+      } else { 
+        alert("Please Expand the Client Info Panel");
+        
+      }
+   
       
-      alert('Notes Copied to Clipboard');      
+            
     } else {
-      alert("Please select an outcome");
+    
+      if(!this.client.outcome.outcome){
+        alert("Please select an outcome");
+      }
     }
-
-
+      
   }
   
   reset(): void {

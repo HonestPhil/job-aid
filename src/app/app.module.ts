@@ -4,6 +4,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material';
+import { NgxElectronModule } from 'ngx-electron';
 
 import { CustomMaterialModule } from './custom-material/custom-material.module';
 
@@ -56,7 +57,8 @@ import { OutcomePipe } from './assets/pipes/outcome.pipe';
     CustomMaterialModule,
     HttpClientModule,
     FormsModule,
-    MatDialogModule
+    MatDialogModule,
+    NgxElectronModule
   ],
   entryComponents: [
     OutcomeComponent,

@@ -64,8 +64,14 @@
         <mat-radio-button labelPosition='before' value="moved">Did your plan change it's contract with medicare?</mat-radio-button><br>
         <mat-radio-button labelPosition='before' value="coverage">Have you recently lost coverage?</mat-radio-button><br>
         <mat-radio-button labelPosition='before' value="help">Are you receiving any extra help?</mat-radio-button><br>
-        <mat-radio-button labelPosition='before' value="none">No SEP available.</mat-radio-button>
+        <mat-radio-button labelPosition='before' value="none">No SEP available.</mat-radio-button><br>
+        <mat-radio-button labelPosition='before' value="other">Other</mat-radio-button>
     </mat-radio-group> 
+    <div>
+    <mat-form-field class="demo-field">
+      <input [(ngModel)]="client.outcome.notes" matInput  placeholder="Other SEP" >
+    </mat-form-field>
+    </div>
     <p><a target='blank' href='https://www.medicare.gov/sign-up-change-plans/when-can-i-join-a-health-or-drug-plan/special-circumstances/join-plan-special-circumstances.html'>Click here for more SEP options</a></p>
 </div>
 
