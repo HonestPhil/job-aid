@@ -1,0 +1,43 @@
+@import "~variables.scss";
+
+div {
+    width: 100%;
+}
+
+.value {
+    color: grey;
+}
+
+.call-info {
+    overflow: scroll;
+}
+
+textarea {
+    width: 100%;
+    height: 5rem;
+}
+
+.notes-buttons {
+    width: 100%;
+    margin: auto;
+    content: center;
+}
+
+button{
+    margin-bottom: 1rem;
+}
+
+.btn-copy {
+    margin-right: 0;
+}
+
+
+
+.section-title {
+    color: $mainBlue;
+    display: inline-block;
+}
+
+.section-header {
+    width: 100%;
+}

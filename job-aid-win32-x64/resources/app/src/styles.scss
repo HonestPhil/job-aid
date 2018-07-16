@@ -1,0 +1,13 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~variables.scss";
+
+.hint {
+    padding-left: 1rem;
+    color: red;
+}
+
+.question-text {
+    color: $mainBlue;
+}
+
+

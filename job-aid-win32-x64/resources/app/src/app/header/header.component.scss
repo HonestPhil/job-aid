@@ -1,0 +1,11 @@
+@import "~variables.scss";
+
+img {
+    width: 8rem;
+    height: auto;
+}
+
+mat-toolbar {
+    height: 5rem;
+    background-color: $mainBlue;
+}

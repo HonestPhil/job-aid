@@ -1,0 +1,138 @@
+<h1 mat-dialog-title class='question-text'>What is the outcome of this phone call?</h1>
+<div mat-dialog-content>
+    
+    <div>
+        <mat-form-field>
+            
+            <mat-select [(ngModel)]='client.outcome.outcome' placeholder='Outcome'>
+                <mat-option value='enrolled'>Enrolled</mat-option>
+                <mat-option value='callback'>Callback Scheduled</mat-option>
+                <mat-option value='no'>Not Interested</mat-option>
+            </mat-select>
+        </mat-form-field>        
+    </div>
+
+
+    
+    <div *ngIf="client.outcome.outcome === 'enrolled'">
+        <div>
+          <mat-form-field >
+            <mat-select  [(ngModel)]='client.outcome.plan.type' placeholder='Select A Plan Type'>
+              <mat-option value='gap'>Medigap</mat-option>
+              <mat-option value='gapPDP'>Medigap and PDP</mat-option>
+              <mat-option value='advantage'>Medicare Advantage</mat-option>
+              <mat-option value='avgPDP'>Medicare Advantage and PDP</mat-option>
+              <mat-option value='snp'>Special Needs Plan</mat-option>
+              <mat-option value='pdp'>Prescription Drug Plan</mat-option>
+            </mat-select> 
+          </mat-form-field>
+          
+          <mat-form-field class="demo-field">
+            <input [(ngModel)]="client.qualified.medicareId" matInput  placeholder="Medicare Id #" >
+          </mat-form-field>
+          
+        </div>
+        
+
+        <div [ngSwitch]='client.outcome.plan.type'>
+            <div *ngSwitchCase="'avgPDP'">
+              <table class="demo-field" cellspacing="0"><tr>
+                <td><mat-form-field class="demo-field">
+                  <input [(ngModel)]="client.outcome.plan.planName" matInput  placeholder="MA Plan Name" >
+                </mat-form-field></td>
+                <td><mat-form-field class="demo-field">
+                  <input matInput [(ngModel)]='client.outcome.plan.planEffective' type="date" placeholder="MA Effective Date">
+                </mat-form-field></td>
+                <td><mat-form-field class="demo-field">
+                  <input matInput [(ngModel)]='client.outcome.plan.planConfirm' placeholder="MA Confirmation Number">
+                </mat-form-field></td>
+              </tr></table>
+              <table class="demo-field" cellspacing="0"><tr>
+                <td><mat-form-field class="demo-field">
+                  <input [(ngModel)]="client.outcome.plan.pdpName" matInput  placeholder="PDP Plan Name" >
+                </mat-form-field></td>
+                <td><mat-form-field class="demo-field">
+                  <input matInput [(ngModel)]='client.outcome.plan.pdpEffective' type="date"  placeholder="PDP Effective Date">
+                </mat-form-field></td>
+                <td><mat-form-field class="demo-field">
+                  <input matInput [(ngModel)]='client.outcome.plan.pdpConfirm' placeholder="PDP Confirmation Number">
+                </mat-form-field></td>
+              </tr></table>
+            </div>
+            
+            <div *ngSwitchCase="'gapPDP'">
+              <table class="demo-field" cellspacing="0"><tr>
+                <td><mat-form-field class="demo-field">
+                  <input [(ngModel)]="client.outcome.plan.planName" matInput  placeholder="Medigap Plan Name" >
+                </mat-form-field></td>
+                <td><mat-form-field class="demo-field">
+                  <input matInput [(ngModel)]='client.outcome.plan.planEffective' type="date" placeholder="Medigap Effective Date">
+                </mat-form-field></td>
+                <td><mat-form-field class="demo-field">
+                  <input matInput [(ngModel)]='client.outcome.plan.planConfirm' placeholder="Medigap Confirmation Number">
+                </mat-form-field></td>
+              </tr></table>
+              <table class="demo-field" cellspacing="0"><tr>
+                <td><mat-form-field class="demo-field">
+                  <input [(ngModel)]="client.outcome.plan.pdpName" matInput  placeholder="PDP Plan Name" >
+                </mat-form-field></td>
+                <td><mat-form-field class="demo-field">
+                  <input matInput [(ngModel)]='client.outcome.plan.pdpEffective' type="date" placeholder="PDP Effective Date">
+                </mat-form-field></td>
+                <td><mat-form-field class="demo-field">
+                  <input matInput [(ngModel)]='client.outcome.plan.pdpConfirm' placeholder="PDP Confirmation Number">
+                </mat-form-field></td>
+              </tr></table>
+            </div>
+
+            <div *ngSwitchCase="'snp'" >
+                 <div>
+                    <mat-form-field class="demo-field">
+                        <input [(ngModel)]="client.outcome.plan.planName" matInput  placeholder="Plan Name" >
+                    </mat-form-field>
+                    <mat-form-field class="demo-field">
+                        <input [(ngModel)]="client.outcome.plan.planEffective" matInput  type="date" placeholder="Effective Date" >
+                    </mat-form-field>
+                    <mat-form-field class="demo-field">
+                        <input [(ngModel)]="client.outcome.plan.planConfirm" matInput  placeholder="Confirmation Number" >
+                    </mat-form-field>
+                 </div>
+            </div>
+            <div *ngSwitchCase="'pdp'" >
+                 <div>
+                    <mat-form-field class="demo-field">
+                        <input [(ngModel)]="client.outcome.plan.pdpName" matInput  placeholder="Plan Name" >
+                    </mat-form-field>
+                    <mat-form-field class="demo-field">
+                        <input [(ngModel)]="client.outcome.plan.pdpEffective" matInput  type="date" placeholder="Effective Date" >
+                    </mat-form-field>
+                    <mat-form-field class="demo-field">
+                        <input [(ngModel)]="client.outcome.plan.pdpConfirm" matInput  placeholder="Confirmation Number" >
+                    </mat-form-field>
+                 </div>
+            </div>
+            <div *ngSwitchDefault >
+                 <div>
+                    <mat-form-field class="demo-field">
+                        <input [(ngModel)]="client.outcome.plan.planName" matInput  placeholder="Plan Name" >
+                    </mat-form-field>
+                    <mat-form-field class="demo-field">
+                        <input [(ngModel)]="client.outcome.plan.planEffective" matInput  type="date" placeholder="Effective Date" >
+                    </mat-form-field>
+                    <mat-form-field class="demo-field">
+                        <input [(ngModel)]="client.outcome.plan.planConfirm" matInput  placeholder="Confirmation Number" >
+                    </mat-form-field>
+                 </div>
+            </div>
+        </div>
+
+
+    
+
+
+
+    </div> 
+
+<button mat-button class='close-btn' (click)='onClose()'>Close</button>
+
+</div>

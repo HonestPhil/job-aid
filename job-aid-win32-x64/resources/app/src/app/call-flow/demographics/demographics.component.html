@@ -1,0 +1,37 @@
+<div>
+  <table class="demo-field" cellspacing="0"><tr>
+    <td><mat-form-field class="demo-field">
+      <input [(ngModel)]="client.demographics.firstName" matInput  placeholder="First Name" >
+    </mat-form-field></td>
+    <td><mat-form-field class="demo-field">
+      <input matInput [(ngModel)]='client.demographics.lastName' placeholder="Last Name">
+    </mat-form-field></td>
+  </tr></table>
+  
+    <mat-form-field class="demo-field">
+      <input matInput [(ngModel)]='client.demographics.address.street' placeholder="Address">    
+    </mat-form-field>
+    
+  <table class="demo-field" cellspacing="0"><tr>
+      <td><mat-form-field class="demo-field">
+      <input matInput [(ngModel)]='client.demographics.address.city' placeholder="City">
+    </mat-form-field></td>
+    <td><mat-form-field class="demo-field">
+      <input matInput [(ngModel)]='client.demographics.address.state' placeholder="State">
+    </mat-form-field></td>
+    <td><mat-form-field class="demo-field">
+      <input matInput [(ngModel)]='client.demographics.address.zip' placeholder="Postal Code" >
+      <mat-hint align="end"></mat-hint>
+    </mat-form-field></td>
+  </tr></table>
+  
+  <mat-form-field>
+    <input matInput [(ngModel)]='client.demographics.phone' type='tel' placeholder='Phone Number'/>
+  </mat-form-field>
+  
+<mat-form-field>
+  <input matInput [(ngModel)]='client.demographics.birthday' type='date' placeholder="Birth Date">
+</mat-form-field>
+</div>
+
+

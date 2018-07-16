@@ -1,0 +1,21 @@
+<div>
+    <p>
+        Based on your fact finding, what product will you present to the client?
+    </p>
+</div>
+
+<mat-accordion >
+    <mat-expansion-panel *ngFor='let plan of plans' >
+        <mat-expansion-panel-header mat-button >
+            <mat-panel-title>
+                {{plan.planType}}
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <ul >
+            <li *ngFor='let compliance of plan.compliance'>
+               <mat-checkbox>{{ compliance }}</mat-checkbox> 
+            </li>
+        </ul>
+    </mat-expansion-panel>
+</mat-accordion>
+

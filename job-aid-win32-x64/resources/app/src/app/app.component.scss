@@ -1,0 +1,21 @@
+.container {
+    width: 95%;
+    margin: auto;
+}
+
+.row {
+    position: relative;
+}
+
+.column-left {
+    width: 65%;
+}
+
+.column-right {
+    position: fixed;
+    width: 20%;
+    right: 1rem;
+    top: 1rem;
+    
+}
+

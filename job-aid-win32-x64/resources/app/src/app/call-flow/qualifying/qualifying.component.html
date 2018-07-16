@@ -1,0 +1,79 @@
+<div>
+    
+
+
+<div class='question'>
+    <h3>Determine Current Coverage</h3>
+    
+    <div>
+        <mat-radio-group [(ngModel)]='client.qualified.extraHelp'>
+            <p class='question-text'>Are you enrolled in Medicaid?</p> 
+            <mat-radio-button [value]='true'>
+                Yes
+            </mat-radio-button>
+            <mat-radio-button [value]='false'>
+                No
+            </mat-radio-button>
+        </mat-radio-group>
+    </div>
+    
+    <p class='question-text'>Are you enrolled in Medicare parts A & B?</p>
+    <mat-form-field>
+        <mat-select [(ngModel)]='client.qualified.medicareParts.parts'>
+            <mat-option value='neither'>Neither</mat-option>
+            <mat-option value='partA'>Part A</mat-option>
+            <mat-option value='partB'>Part B</mat-option>
+            <mat-option value='both'>Both</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+
+<div *ngIf="client.qualified.medicareParts.parts === 'neither'">
+    <h3>If not...</h3>
+    <p class='question-text'>What coverage do you cuurrently have?</p>    
+    <p class='question-text'>When did that plan end?</p>    
+</div>
+<div *ngIf="client.qualified.medicareParts.parts === 'both'">
+    <p class='question-text'>What are your effective dates for Pats A & B?</p>
+    <mat-form-field >
+        <input matInput [(ngModel)]='client.qualified.medicareParts.partA' type='date' placeholder="Part A Effective Date" >
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput [(ngModel)]='client.qualified.medicareParts.partB' type='date' placeholder="Part B Effective Date" >
+    </mat-form-field>    
+</div>
+
+<div *ngIf="client.qualified.medicareParts.parts === 'partA'">
+    <p class='question-text'>What are your effective dates for Parts A & B?</p>
+    <mat-form-field >
+        <input matInput [(ngModel)]='client.qualified.medicareParts.partA' type='date' placeholder="Part A Effective Date" >
+    </mat-form-field>
+</div>
+
+<div *ngIf="client.qualified.medicareParts.parts === 'partB'">
+    <p class='question-text'>What are your effective dates for Parts A & B?</p>
+    <mat-form-field >
+        <input matInput [(ngModel)]='client.qualified.medicareParts.partB' type='date' placeholder="Part B Effective Date" >
+    </mat-form-field>
+</div>
+
+<div class='question '>
+    <h3 >SEP Determination</h3>
+    <mat-radio-group class='question-text'>
+        <mat-radio-button labelPosition='before' value="moved">Have you recently moved?</mat-radio-button><br>
+        <mat-radio-button labelPosition='before' value="moved">Did your plan change it's contract with medicare?</mat-radio-button><br>
+        <mat-radio-button labelPosition='before' value="coverage">Have you recently lost coverage?</mat-radio-button><br>
+        <mat-radio-button labelPosition='before' value="help">Are you receiving any extra help?</mat-radio-button><br>
+        <mat-radio-button labelPosition='before' value="none">No SEP available.</mat-radio-button><br>
+        <mat-radio-button labelPosition='before' value="other">Other</mat-radio-button>
+    </mat-radio-group> 
+    <div>
+    <mat-form-field class="demo-field">
+      <input [(ngModel)]="client.outcome.notes" matInput  placeholder="Other SEP" >
+    </mat-form-field>
+    </div>
+    <p><a target='blank' href='https://www.medicare.gov/sign-up-change-plans/when-can-i-join-a-health-or-drug-plan/special-circumstances/join-plan-special-circumstances.html'>Click here for more SEP options</a></p>
+</div>
+
+</div>
+
