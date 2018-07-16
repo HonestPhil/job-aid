@@ -9,7 +9,7 @@ export const Clients: ClientInfo = {
             street : '',
             city : '',
             state : 'NJ',
-            zip : '',
+            zip : ''
         },
         phone: '',
         birthday : ''
