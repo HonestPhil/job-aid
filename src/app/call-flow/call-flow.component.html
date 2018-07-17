@@ -1,5 +1,10 @@
+<i class="fas fa-address-book"></i>
 
 <mat-vertical-stepper>
+    <ng-template matStepperIcon="edit">
+         <i class="material-icons">check</i>
+         <!--<fa-icon [icon]="faCoffee">check</fa-icon>-->
+    </ng-template>
     <mat-step>
         <ng-template matStepLabel>Intro</ng-template>
         <app-intro [client]='client'></app-intro>

@@ -7,6 +7,7 @@ import { MatDialogModule } from '@angular/material';
 import { NgxElectronModule } from 'ngx-electron';
 
 import { CustomMaterialModule } from './custom-material/custom-material.module';
+// import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { AppComponent } from './app.component';
 import { CallFlowComponent } from './call-flow/call-flow.component';
